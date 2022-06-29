@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Length;
+
 @Entity
 @Table(name = "tb_movie")
 public class Movie implements Serializable {
@@ -27,6 +29,8 @@ public class Movie implements Serializable {
 	private String subTitle;
 	private Integer year;
 	private String imgUrl;
+	
+	@Length(min = 1, max = 1000)
 	private String synopsis;
 
 	@ManyToOne
